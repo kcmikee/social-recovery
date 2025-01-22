@@ -4,6 +4,192 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  11155111: {
+    SocialRecoveryWallet: {
+      address: "0x1cefd0112c56111c05cccac0aff6e9b0b007c822",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [
+            {
+              name: "_guardians",
+              type: "address[]",
+              internalType: "address[]",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "receive",
+          stateMutability: "payable",
+        },
+        {
+          type: "function",
+          name: "addGuardian",
+          inputs: [
+            {
+              name: "_guardian",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "call",
+          inputs: [
+            {
+              name: "callee",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "value",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "data",
+              type: "bytes",
+              internalType: "bytes",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bytes",
+              internalType: "bytes",
+            },
+          ],
+          stateMutability: "payable",
+        },
+        {
+          type: "function",
+          name: "isGuardian",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "owner",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "removeGuardian",
+          inputs: [
+            {
+              name: "_guardian",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "signalNewOwner",
+          inputs: [
+            {
+              name: "_proposedOwner",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "event",
+          name: "NewOwnerSignaled",
+          inputs: [
+            {
+              name: "by",
+              type: "address",
+              indexed: false,
+              internalType: "address",
+            },
+            {
+              name: "proposedOwner",
+              type: "address",
+              indexed: false,
+              internalType: "address",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "RecoveryExecuted",
+          inputs: [
+            {
+              name: "newOwner",
+              type: "address",
+              indexed: false,
+              internalType: "address",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "error",
+          name: "AlreadyGuardian",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "AlreadyVoted",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "CallFailed",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "NotExistingGuardian",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "NotGuardian",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "NotOwner",
+          inputs: [],
+        },
+      ],
+      inheritedFunctions: {},
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
